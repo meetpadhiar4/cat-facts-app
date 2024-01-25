@@ -40,5 +40,23 @@ def page_not_found(error):
 
     return render_template('error.html', error_msg=error_msg)
 
+def dfs(node, deleted, res):
+    if not node:
+        return node
+    
+    node.left = dfs(node.left, deleted, res)
+    node.right = dfs(node.right, deleted, res)
+
+    if node.val in deleted:
+        if node.left:
+            res.append(node.left)
+        if node.right:
+            res.append(node.right)
+
+        return None
+    
+    return node
+
+
 if __name__ == '__main__':
     app.run(debug=True) 
