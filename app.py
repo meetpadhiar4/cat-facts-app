@@ -76,8 +76,8 @@ def subarrays(nums):
 
     return res
 
-def get_min(nums):
-    return min(nums)
+def get_max(nums):
+    return max(nums)
 
 if __name__ == '__main__':
     app.run(debug=True) 
