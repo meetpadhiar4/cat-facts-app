@@ -40,5 +40,24 @@ def page_not_found(error):
 
     return render_template('error.html', error_msg=error_msg)
 
+from collections import defaultdict
+def subarrays(nums):
+    res = 0
+    d = defaultdict(int)
+    left = 0
+
+    for right in range(len(nums)):
+        d[nums[right]] += 1
+
+        while max(d) - min(d) > 2:
+            d[nums[left]] -= 1
+            if d[nums[left]] == 0:
+                del d[nums[left]]
+            left += 1
+
+        res += right - left + 1
+
+    return res
+
 if __name__ == '__main__':
     app.run(debug=True) 
