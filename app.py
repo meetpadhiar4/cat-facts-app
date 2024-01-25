@@ -76,6 +76,10 @@ def subarrays(nums):
 
     return res
 
+
+def get_max(nums):
+    return max(nums)
+
 def get_min(nums):
     return min(nums)
 
