@@ -83,5 +83,8 @@ def get_max(nums):
 def get_min(nums):
     return min(nums)
 
+def add(a, b):
+    return a + b
+
 if __name__ == '__main__':
     app.run(debug=True) 
